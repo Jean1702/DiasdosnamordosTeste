@@ -67,11 +67,11 @@ function sumircoracao(tempo, tipo){
 
 function mensagensdobotao(){
     let mensagensbotao = [
-        "De novo? ❤",
+        "De novo? ",
         "Mais uma vez?",
         "Amo você ❤",
         "Eu te amo ❤",
-        "Continuar? ❤",
+        "Cotinuar? ❤",
         "Continuar ❤"
     ];
 
@@ -202,33 +202,11 @@ function audioalet(){
     document.querySelectorAll("#musica source").forEach(source => source.remove());
     tagdamusica.volume = 1;
     let source = document.createElement("source")
-    source.src = musicaesegundo[0];
-    source.type = "audio/mp3"
-    
-    tagdamusica.appendChild(source);
-    tagdamusica.load();
-    tagdamusica.addEventListener("loadeddata",()=> {
-        setTimeout(()=> {
-            tagdamusica.currentTime = musicaesegundo[1];
-            tagdamusica.play();
-        },100)
-    });
-    console.log(tagdamusica)
-
 }
 
-function gradientedovolume(){
-    const tagdamusica = document.getElementById("musica")
-    let intervalo = setInterval(() => {
-        if( tagdamusica.volume > 0.1){
-            tagdamusica.volume -= 0.01
-            console.log(tagdamusica.volume)
-        }else{
-            tagdamusica.volume = 0.1;
-            clearInterval(intervalo)
-        }
-    }, 00);
-}
+
+
+
 
 botao.addEventListener('click', function(){
     
