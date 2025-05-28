@@ -227,7 +227,7 @@ function gradientedovolume(){
             tagdamusica.volume = 0.1;
             clearInterval(intervalo)
         }
-    }, 00);
+    }, 500);
 }
 
 botao.addEventListener('click', function(){
