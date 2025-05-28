@@ -1,0 +1,143 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    place-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+}
+
+#botao{
+    width: 250px;
+    height: 75px;
+    font-size: xx-large;
+    border-radius: 20px;
+    border: 0;
+    color: white;
+    background-image: linear-gradient(177.6deg, rgba(168,156,160,1) 15.3%, rgba(140,130,135,1) 91.3%);
+    box-shadow: 5px 5px 20px wheat;
+}    
+
+#botao:hover{
+    background-image: linear-gradient(177.6deg, rgba(180,170,175,1) 15.3%, rgba(140,130,135,1) 91.3%);
+}
+
+.container{
+    position: relative;
+}
+
+.mensagem{
+    position: absolute;
+    background-color: #f7f4f1;
+    width: 290px;
+    height: 380px;
+    box-shadow: 0px 0px 15px wheat;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 3px;
+    gap: 2px;
+    
+}
+
+.texto{
+    position: relative;
+    width: 280px;
+    height: 80px;
+}
+
+
+#mensagemaleatoria{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    overflow-wrap: normal;
+    text-align: center;
+    font-size: 1.5em;
+    justify-content: center;
+    place-items: center;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+}
+
+#cancelar {
+    
+    background: #c0392b;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+    border: 2px solid rgba(255, 140, 0, 0.8);
+    border: none;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
+    z-index: 2;
+    position: absolute;
+    top: 110%;
+}
+
+#cancelar:hover{
+     background: #a93226;
+     transform: scale(1.1);
+}
+
+#cora{
+    position: absolute;
+    display: flex;
+    width: 320px;
+    color: red;
+    text-shadow: 0 0 10px darkmagenta;
+}
+
+#cora span:nth-of-type(even){
+    text-shadow: 0 0 10px violet;
+}
+
+#corasub{
+    position: absolute;
+    display: flex;
+    width: 320px;
+    color: red;
+    text-shadow: 0 0 10px violet;
+}
+
+#corasub span:nth-of-type(even){
+    text-shadow: 0 0 10px darkmagenta;
+}
+
+
+
+.imagem{
+    width: 290px;
+    height: 290px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#imagemaletoria{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+@keyframes abrir{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
