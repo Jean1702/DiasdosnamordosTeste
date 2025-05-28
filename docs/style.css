@@ -30,6 +30,7 @@ body{
 }
 
 .mensagem{
+    top: 20%;
     position: absolute;
     background-color: #f7f4f1;
     width: 290px;
