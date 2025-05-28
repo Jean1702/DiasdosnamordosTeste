@@ -67,11 +67,11 @@ function sumircoracao(tempo, tipo){
 
 function mensagensdobotao(){
     let mensagensbotao = [
-        "De novo? ❤",
+        "De novo? ",
         "Mais uma vez?",
         "Amo você ❤",
         "Eu te amo ❤",
-        "Continuar? ❤",
+        "Cotinuar? ❤",
         "Continuar ❤"
     ];
 

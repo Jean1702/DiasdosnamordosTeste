@@ -20,9 +20,18 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
     background-image: linear-gradient(177.6deg, rgba(168,156,160,1) 15.3%, rgba(140,130,135,1) 91.3%);
     box-shadow: 5px 5px 20px wheat;
 }    
+
+.corazione{
+    
+  font-size: 45px;
+}
 
 #botao:hover{
     background-image: linear-gradient(177.6deg, rgba(180,170,175,1) 15.3%, rgba(140,130,135,1) 91.3%);
@@ -34,6 +43,7 @@ body{
 }
 
 .mensagem{
+    top: 20%;
     position: absolute;
     background-color: #f7f4f1;
     width: 290px;
@@ -41,9 +51,10 @@ body{
     box-shadow: 0px 0px 15px wheat;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px 20px 3px;
     gap: 2px;
-    
+    transform: translateY(50vh);
 }
 
 .texto{
