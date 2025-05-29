@@ -85,7 +85,7 @@ body{
     overflow-wrap: normal;
     text-align: center;
     font-size: 20px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     justify-content: center;
     place-items: center;
     font-style: italic;
