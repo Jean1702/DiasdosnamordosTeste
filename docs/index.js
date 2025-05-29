@@ -7,6 +7,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+document.body.addEventListener("click", function(){
+    let mensagemaleatoria = document.getElementById("mensage");
+    if(mensagemaleatoria.style.display === "flex"){
+        sumir();
+    }else{
+    }
+})
+
 function criarcoracoes(tipo, tempo){
     let tamanhodoelemento = document.getElementById("mensage").offsetWidth;
     let quantidade = tamanhodoelemento/16.5;
@@ -69,10 +77,10 @@ function mensagensdobotao(){
     let mensagensbotao = [
         "De novo? ",
         "Mais uma vez?",
-        "Amo você ❤",
-        "Eu te amo ❤",
-        "Cotinuar? ❤",
-        "Continuar ❤"
+        "Amo você ♥",
+        "Eu te amo ♥",
+        "Cotinuar? ♥",
+        "Continuar ♥"
     ];
 
     return botao.innerHTML = mensagensbotao[Math.floor(Math.random() * mensagensbotao.length)];
@@ -165,6 +173,7 @@ function butone(){
 }
 
 function musicaalet(){
+    
     let musicaalet = [
         "audio/Lonely Day78.mp3",
         "audio/Aliança30.mp3",
@@ -191,10 +200,14 @@ function musicaalet(){
     let indicealeatorio = Math.floor(Math.random()*musicaalet.length)
     return ([musicaalet[indicealeatorio], segundos[indicealeatorio]    ])
 
-
 }
 
+let fadeInterval = null;
 function audioalet(){
+    if (fadeInterval) {
+        clearInterval(fadeInterval);
+        fadeInterval = null;
+    }
     const musicaesegundo = musicaalet();
     console.log(musicaesegundo)
     let tagdamusica = document.getElementById("musica")
@@ -211,21 +224,23 @@ function audioalet(){
         setTimeout(()=> {
             tagdamusica.currentTime = musicaesegundo[1];
             tagdamusica.play();
-        },100)
-    });
+        },50)
+    },{ once: true });
     console.log(tagdamusica)
 
 }
 
 function gradientedovolume(){
     const tagdamusica = document.getElementById("musica")
-    let intervalo = setInterval(() => {
+     if (fadeInterval) clearInterval(fadeInterval);
+
+    fadeInterval = setInterval(() => {
         if( tagdamusica.volume > 0.1){
-            tagdamusica.volume -= 0.01
-            console.log(tagdamusica.volume)
+            tagdamusica.volume = Math.max(0.1, tagdamusica.volume - 0.01);            console.log(tagdamusica.volume)
         }else{
             tagdamusica.volume = 0.1;
-            clearInterval(intervalo)
+            clearInterval(fadeInterval);
+            fadeInterval = null;
         }
     }, 500);
 }
@@ -250,19 +265,17 @@ botao.addEventListener('click', function(){
 function sumir(){
 
     botao.disabled = true;
-    setTimeout(() => {
-        criarcoracoes("cora", 0.9);
+   
+    criarcoracoes("cora", 0.9);
 
-        animacorao("animarcoracoes","cora");
+    animacorao("animarcoracoes","cora");
 
-        sumircoracao(900, "cora");
-        let element = document.getElementById("mensage");
-        element.style.display = "none";
-        mensagensdobotao();
+    sumircoracao(900, "cora");
+    let element = document.getElementById("mensage");
+    element.style.display = "none";
+    mensagensdobotao();
         
-        gradientedovolume();
-        botao.disabled = false;
-    }, 50);
-    
+    gradientedovolume();
+    botao.disabled = false;
 
 }
